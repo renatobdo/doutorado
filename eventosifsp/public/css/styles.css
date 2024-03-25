@@ -57,6 +57,20 @@ header{
     margin-left: 60px;
     /*text-align: center;*/
 }
+#search-container-catalogo{
+    /*background-image: url("../img/plateiaEventos.png");*/
+    /*background-image: url("../img/UspContraADengue.png");*/
+    /*background-size: cover;*/
+    background-size: auto;
+   /* background-position: center;*/
+    background-position: left;
+    height: 400px;
+    padding: 20px;
+    margin-left: 60px;
+    /*text-align: center;*/
+    margin-bottom: 550px; /* Ajuste conforme necessário */
+}
+
 .input-container {
     display: flex;
     flex-direction: column;
@@ -78,6 +92,14 @@ header{
     font-weight: 900;
     margin-left: 290px;
 }
+#search-container-catalogo h1{
+    /*color: #FFF;*/
+    color: #00f;
+    margin-bottom: 30px;
+    font-weight: 900;
+    margin-left: 0px;
+    text-align: left;
+}
 #search-container form{
     width: 50%;
     margin: 0 auto; 
@@ -85,6 +107,15 @@ header{
     
 }
 
+.styled-link {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+
+.styled-link:hover {
+    color: red; /* Altere para a cor desejada quando o mouse passa sobre o link */
+}
 
 /* lista de eventos */
 
@@ -164,7 +195,9 @@ header{
     padding:10px !important;
     margin-left: 50px;
 }
-
+.form-control{
+    width: 50%;
+}
 .large-input {
     width: 500%; /* 3 vezes a largura original */
 }
@@ -258,6 +291,7 @@ footer{
     padding: 30px;
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
 }
 footer p{

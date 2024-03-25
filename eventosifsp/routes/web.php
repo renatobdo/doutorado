@@ -50,6 +50,12 @@ Route::post('/events/join/{id}', [EventController::class,'joinEvent'])->middlewa
 Route::delete('/events/leave/{id}', [EventController::class,'leaveEvent'])->middleware('auth');
 Route::get('/buscarCep/{cep}', [EventController::class, 'getAddressByCEP']);
 Route::get('/buscarDengue/{cep}', [EventController::class, 'buscarCasosDengue']);
+//Route::get('catalogo/{termo}', [EventController::class, 'buscarCatalogo']);
+//Route::get('/catalogo/{termo}', [EventController::class, 'buscarCatalogoAll']);
+//Route::get('catalogo', [EventController::class, 'buscarCatalogoAll']);
+Route::get('/editar-termo/{termo}', [EventController::class, 'editarTermo']);
+
+Route::get('catalogo', [EventController::class, 'showCatalogo']);
 Route::get('dashboard',[EventController::class, 'dashboard'])->middleware('auth');
 
 Route::get('/contact', function () {

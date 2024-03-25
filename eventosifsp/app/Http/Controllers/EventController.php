@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\arboviroses;
+use App\Models\Catalogo;
 use Illuminate\Http\Request;
 use App\Models\Evento;
 use App\Models\User;
@@ -13,7 +14,7 @@ class EventController extends Controller
     //
     public function index()
     {
-    /*
+        /*
         $nome = "Renato";
         $idade = 20;
         $arr = [1, 2, 3, 4, 5];
@@ -32,21 +33,23 @@ class EventController extends Controller
         );
     */
         $search = request('search');
-        if($search){
+        if ($search) {
             $eventos = Evento::where([
-                ['titulo', 'like', '%'.$search.'%']
+                ['titulo', 'like', '%' . $search . '%']
             ])->get();
-        }else{
+        } else {
             $eventos = Evento::all();
         }
-        
-        return view("events.index",["events" => $eventos, 'search' =>
-                                                $search]);
+
+        return view("events.index", ["events" => $eventos, 'search' =>
+        $search]);
     }
-    public function create(){
+    public function create()
+    {
         return view('events.create');
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $event = new Evento;
         $event->titulo = $request->title;
         $event->date = $request->date;
@@ -58,12 +61,12 @@ class EventController extends Controller
         $event->items = $request->items;
 
         //Image upload
-        if($request->hasFile('image') && $request->file('image')->isValid()){            
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $requestImage = $request->image;
             $extension = $requestImage->extension();
-            $imageName = md5($requestImage->getClientOriginalName().strtotime('now')).
-                ".".$extension;
-            $requestImage->move(public_path('img/events'),$imageName);
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime('now')) .
+                "." . $extension;
+            $requestImage->move(public_path('img/events'), $imageName);
             $event->image = $imageName;
         }
         $user = auth()->user();
@@ -71,94 +74,99 @@ class EventController extends Controller
         $event->save();
         return redirect('/')->with('msg', 'Evento criado com sucesso');
     }
-    public function show($id){
+    public function show($id)
+    {
 
         $event = Evento::findOrFail($id);
 
         $user = auth()->user();
         $hasUserJoined = false;
-        if($user){
+        if ($user) {
             $userEvents = $user->eventsAsParticipant->toArray();
 
-            foreach($userEvents as $userEvent){
-                if($userEvent['id'] == $id){
+            foreach ($userEvents as $userEvent) {
+                if ($userEvent['id'] == $id) {
                     $hasUserJoined = true;
                 }
             }
         }
 
-        $eventOwner= User::where('id', $event->user_id)->first()->toArray();
+        $eventOwner = User::where('id', $event->user_id)->first()->toArray();
 
-        return view ('events.show',['event'=>$event, 'eventOwner' => $eventOwner,
-            'hasUserJoined' => $hasUserJoined]);
-
+        return view('events.show', [
+            'event' => $event, 'eventOwner' => $eventOwner,
+            'hasUserJoined' => $hasUserJoined
+        ]);
     }
-    public function dashboard(){
-        
+    public function dashboard()
+    {
+
         $user = auth()->user();
         $events = $user->events;
 
-        $eventsAsParticipant = $user->eventsAsParticipant;    
+        $eventsAsParticipant = $user->eventsAsParticipant;
 
-        return view('events.dashboard',
-        ['events'=>$events,'eventsasparticipant'=>$eventsAsParticipant]);
+        return view(
+            'events.dashboard',
+            ['events' => $events, 'eventsasparticipant' => $eventsAsParticipant]
+        );
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         Evento::findOrFail($id)->delete();
-        
-        return redirect('/dashboard')->with('msg','Evento excluído com sucesso!');
+
+        return redirect('/dashboard')->with('msg', 'Evento excluído com sucesso!');
     }
-    public function edit($id){
+    public function edit($id)
+    {
         $user = auth()->user();
 
-        $event= Evento::findOrFail($id);
+        $event = Evento::findOrFail($id);
 
-        if ($user->id != $event->user_id){
+        if ($user->id != $event->user_id) {
 
             return redirect('/dashboard');
         }
 
-        return view('events.edit',['event'=>$event]);
-        
-
-
+        return view('events.edit', ['event' => $event]);
     }
-    public function update(Request $request){
+    public function update(Request $request)
+    {
 
         $data = $request->all();
 
         //Image upload
-        if($request->hasFile('image') && $request->file('image')->isValid()){
-            
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+
             $requestImage = $request->image;
             $extension = $requestImage->extension();
-            $imageName = md5($requestImage->getClientOriginalName().strtotime('now')).
-                ".".$extension;
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime('now')) .
+                "." . $extension;
 
-            $requestImage->move(public_path('img/events'),$imageName);
+            $requestImage->move(public_path('img/events'), $imageName);
             $data['image'] = $imageName;
         }
 
         Evento::findOrFail($request->id)->update($data);
 
-        return redirect('/dashboard')->with('msg','Evento editado com sucesso!');
+        return redirect('/dashboard')->with('msg', 'Evento editado com sucesso!');
     }
-    public function joinEvent($id){
+    public function joinEvent($id)
+    {
 
         //usuário logado
         $user = auth()->user();
-    
+
         $user->eventsAsParticipant()->attach($id);
-    
+
         $event = Evento::findOrFail($id);
-        
-        return redirect('/dashboard')->
-            with('msg', 'Sua presença está confirmada no evento '.$event->titulo);
-    
+
+        return redirect('/dashboard')->with('msg', 'Sua presença está confirmada no evento ' . $event->titulo);
     }
 
-    public function leaveEvent($id){
+    public function leaveEvent($id)
+    {
 
         $user = auth()->user();
 
@@ -166,14 +174,13 @@ class EventController extends Controller
 
         $event = Evento::findOrFail($id);
 
-        return redirect('/dashboard')->
-            with('msg', 'Você saiu com sucesso do evento '.$event->titulo);
-
+        return redirect('/dashboard')->with('msg', 'Você saiu com sucesso do evento ' . $event->titulo);
     }
-    public function getAddressByCEP($cep) {
+    public function getAddressByCEP($cep)
+    {
         $response = Http::get("https://viacep.com.br/ws/{$cep}/json/");
         //$response = Http::get("https://h-apigateway.conectagov.estaleiro.serpro.gov.br/api-cep/v1/consulta/cep/{$cep}");
-        
+
         if ($response->successful()) {
             $addressData = $response->json();
             return $addressData;
@@ -188,5 +195,42 @@ class EventController extends Controller
 
         return response()->json(['casos' => $casos]);
     }
-    
+    public function buscarCatalogo($termo)
+    {
+
+
+        $termos = Catalogo::where('termo', 'like', "%{$termo}%")->get();
+
+        return response()->json(['termo' => $termos]);
+    }
+    public function buscarCatalogoAll(Request $request)
+    {
+        $termo = $request->query('');
+        $termos = Catalogo::orderBy('termo')->get(); // Retorna todos os registros da tabela catalogo ordenados pelo termo
+
+        return view('events.catalogo', ['termos' => $termos]);
+    }
+
+
+    public function showCatalogo()
+    {
+
+        $termos = Catalogo::orderBy('termo')->get(); // Retorna todos os registros da tabela catalogo ordenados pelo termo
+
+        return view('events.catalogo', ['termos' => $termos]);
+    }
+    public function editarTermo($termo)
+    {
+        $termo = Catalogo::where('nome', $termo)->first();
+
+        // Verifique se o termo foi encontrado
+        if (!$termo) {
+            // Se o termo não for encontrado, você pode retornar uma resposta de erro ou redirecionar para uma página de erro
+            // Por exemplo:
+            abort(404); // Isso retornará um erro 404 Not Found
+        }
+        
+        // Lógica para buscar os detalhes do termo no banco de dados e passá-los para a página de edição
+        return view('editar-termo', ['termo' => $termo]);
+    }
 }

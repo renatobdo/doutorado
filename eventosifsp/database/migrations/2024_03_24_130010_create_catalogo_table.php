@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('catalogo', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+            $table->string('termo');
             $table->text('descricao')->nullable();           
             $table->timestamps();
         });
