@@ -36,3 +36,10 @@ DB_PASSWORD=admin
 PostGIS
 https://www.youtube.com/watch?v=_PjUa6fr7Ac 
 
+
+Usuário do sistema TemDengue
+renatobdo@gmail.com
+senha: LP2D3Laravel
+
+teste@ifsp.edu.br
+senha: teste@123
