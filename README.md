@@ -11,7 +11,7 @@ Realizar a migração ou alteração no banco de dados:
 
 - php artisan migrate
 
-- arquivo .env para configuração do banco de dados MySQL:
+arquivo .env para configuração do banco de dados MySQL:
 
 DB_CONNECTION=mysql
 
