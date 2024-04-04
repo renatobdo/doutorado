@@ -2,15 +2,28 @@
  Tese de doutorado
 
 # Comandos úteis com laravel
-php artisan migrate
 
-arquivo .env para configuração do banco de dados MySQL:
+- Subir o servidor:
+
+- php artisan serve
+
+
+- php artisan migrate
+
+- arquivo .env para configuração do banco de dados MySQL:
+
 DB_CONNECTION=mysql
+
 DB_HOST=127.0.0.1
+
 DB_PORT=3306
+
 DB_DATABASE=eventosifsp
+
 DB_USERNAME=root
+
 DB_PASSWORD=
+
 
 
 # Comandos úteis com PostGreSQL
