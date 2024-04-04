@@ -7,6 +7,11 @@ Subir o servidor:
 
 - php artisan serve
 
+ou
+
+- php artisan serve --host=0.0.0.0
+  
+
 Realizar a migração ou alteração no banco de dados:
 
 - php artisan migrate
