@@ -3,10 +3,11 @@
 
 # Comandos úteis com laravel
 
-- Subir o servidor:
+Subir o servidor:
 
 - php artisan serve
 
+Realizar a migração ou alteração no banco de dados:
 
 - php artisan migrate
 
