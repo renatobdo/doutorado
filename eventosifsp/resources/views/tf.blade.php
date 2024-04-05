@@ -38,5 +38,13 @@
                 </ul>
             </ul>
             <p> extração de dados de fontes diversas como vídeos </p>
+            <p> Informações que podem ser obtidas de vídeos: </p>
+            <ul>
+                <li>Remédios que  não podem ser tomados
+                </li>
+                <li>Por que as crianças de 10 a 14 anos estão recebendo vacina antes dos idosos? Por que é a faixa etária que mais evolui para a forma grave da doença</li>
+                <li>Os ovos do mosquito da dengue podem sobreviver por 1 ano. Por isso, é importante tirar água parada dos vazos de plantas</li>
+            </ul>
+        </ul>
 </div>
 @endsection
