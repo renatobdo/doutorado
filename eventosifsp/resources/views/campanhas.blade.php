@@ -30,8 +30,10 @@
 
     <a href="https://youtu.be/Ym_zVVRM9hY?list=PLYHoqTjX7zMrXlWBIWkLUUOhN0W-8mFfS">
                 Dúvidas sobre a dengue Dráuzio Varela</a><br><br><br>                
-                
-                
+
+    <a href="https://www.youtube.com/watch?v=i53910rTT7k ">
+             SINTOMAS GRAVES E POUCO FALADOS DA DENGUE | COMO TRATAR?</a><br><br><br>
+                           
                         
 
     <p>Estou com dengue o que faço?</p>
