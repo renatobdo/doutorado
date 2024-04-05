@@ -66,3 +66,16 @@ senha: LP2D3Laravel
 teste@ifsp.edu.br
 
 senha: teste@123
+
+# Funcionalidades
+
+ - Jogos: localhost:8000/jogos
+   Está sendo implementado um jogo em que é possível prevenir focos de dengue. O jogo possibilita ao final mostrar um ranking com pontuação. Se em 5s o cidadão não coletar os possíveis focos a quantidade de mosquitos dobra.
+
+- Campanhas: localhost:8000/campanhas
+  Com vários vídeos (fontes de idados e informações) é possível extrair conhecimento.
+
+- Trabalhos futuros: localhost:8000/tf
+  O que pretendo fazer no futuro ou insights
+
+- 
