@@ -19,9 +19,21 @@
                 Não caia em fake news</a><br><br><br>
 
     <a href="https://youtu.be/pROSQ8G2AN4?list=PLYHoqTjX7zMrXlWBIWkLUUOhN0W-8mFfS">
-                    Quem pode tomar a vacina da Dengue?</a><br><br><br>
+                Quem pode tomar a vacina da Dengue?</a><br><br><br>
             
- 
+    
+    <a href="https://youtu.be/kuhOaoQhfNM?list=PLYHoqTjX7zMrXlWBIWkLUUOhN0W-8mFfS">
+                Todos contra o mosquito da dengue</a><br><br><br>
+    
+    <a href="https://youtu.be/PtKg1m_lhAE?list=PLYHoqTjX7zMrXlWBIWkLUUOhN0W-8mFfS">
+                Dengue: saiba como prevenir</a><br><br><br>                
+
+    <a href="https://youtu.be/Ym_zVVRM9hY?list=PLYHoqTjX7zMrXlWBIWkLUUOhN0W-8mFfS">
+                Dúvidas sobre a dengue Dráuzio Varela</a><br><br><br>                
+                
+                
+                        
+
     <p>Estou com dengue o que faço?</p>
     <a href="https://youtu.be/ZTjr_1BgBHI?list=PLYHoqTjX7zMrXlWBIWkLUUOhN0W-8mFfS">
         Clique aqui para ver vídeo de estou com dengue, o que faço?</a><br>
