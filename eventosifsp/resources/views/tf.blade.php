@@ -37,5 +37,6 @@
                     <li>Aceleração do processo de gestão de metadados</li>
                 </ul>
             </ul>
+            <p> extração de dados de fontes diversas como vídeos </p>
 </div>
 @endsection
