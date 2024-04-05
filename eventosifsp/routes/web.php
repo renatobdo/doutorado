@@ -54,7 +54,21 @@ Route::get('/buscarDengue/{cep}', [EventController::class, 'buscarCasosDengue'])
 //Route::get('/catalogo/{termo}', [EventController::class, 'buscarCatalogoAll']);
 //Route::get('catalogo', [EventController::class, 'buscarCatalogoAll']);
 Route::get('/editar-termo/{termo}', [EventController::class, 'editarTermo']);
-
+Route::get('/metricaseindicadores',  function () {
+    return view('metricaseindicadores');
+});
+Route::get('/repositorios',  function () {
+    return view('repositorios');
+});
+Route::get('/gestao',  function () {
+    return view('gestao');
+});
+Route::get('/tf',  function () {
+    return view('tf');
+});
+Route::get('/campanhas',  function () {
+    return view('campanhas');
+});
 Route::get('catalogo', [EventController::class, 'showCatalogo']);
 Route::get('dashboard',[EventController::class, 'dashboard'])->middleware('auth');
 
@@ -65,7 +79,9 @@ Route::get('/contact', function () {
 Route::get('/produtos', function () {
     return view('products');
 });
-
+Route::get('/jogo', function () {
+    return view('jogo');
+});
 
 
 /*

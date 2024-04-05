@@ -13,7 +13,8 @@
             <thead>
                 <tr>
                     <th>Termo</th>
-                    <th>Descrição</th
+                    <th>Descrição</th>
+                    <th>Tipo de metadado</th>
                 </tr>
             </thead>
             <tbody>

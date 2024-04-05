@@ -25,7 +25,17 @@
                         <a href="/dashboard" class="nav-link mx-2">Meus focos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/dashboard" class="nav-link mx-2">Gerir dados</a>
+                        <a href="/gestao" class="nav-link mx-2">Gerir dados</a>
+                        <ul class="submenu">
+                            <li><a href="/metricaseindicadores">Métricas e indicadores</a></li>
+                            <li><a href="/repositorios">Repositórios</a></li>                            
+                            <li><a href="/ml">Automatização</a></li>
+                            <li><a href="/gis">GIS</a></li>
+                            <li><a href="/campanhas">Campanhas</a></li>
+                           
+                            <li><a href="/tf">Trabalhos Futuros</a></li>
+                            
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <form action="/logout" method="POST">
