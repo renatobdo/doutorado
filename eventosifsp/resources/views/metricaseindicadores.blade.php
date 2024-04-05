@@ -14,5 +14,6 @@
         <a href="https://blog.dsacademy.com.br/as-6-dimensoes-da-qualidade-de-dados-data-quality/">
             Clique aqui para ler sobre as dimensões da qualidade de dados</a>
 
+    <p>Probabilidade de se contrair a dengue em determinado local? (Sugestão da professora Fátima)</p>
 </div>
 @endsection
