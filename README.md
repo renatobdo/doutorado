@@ -16,6 +16,8 @@ Realizar a migração ou alteração no banco de dados:
 
 - php artisan migrate
 
+- caso ocorra erro não se esqueça de ativar a extensão postgis; Vá em query tool e execute o comando CREATE EXTENSION postgis.
+
 arquivo .env para configuração do banco de dados MySQL:
 
 DB_CONNECTION=mysql
