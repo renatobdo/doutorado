@@ -8,7 +8,7 @@
 Código para nuvem de palavras com base no título + abstract + palavras-chave:
 https://colab.research.google.com/drive/1uCr4zJDwAZkJj4sxd7zSdV2WFL0IL3cM?usp=sharing
 
-Nuvem de palavras com termos relacionados e sinônimos:
+Nuvem de palavras com termos relacionados e sinônimos a integração de metadados:
 https://colab.research.google.com/drive/1Scnehbfk_D5IKAm4Py5KyPf70U8ij0cG?usp=sharing
 
 Código para categorização dos artigos com base no abstract:
